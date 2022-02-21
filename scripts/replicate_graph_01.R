@@ -1,0 +1,13 @@
+#### load the libraies we need ####
+library(tidyverse)
+library(dplyr)
+library(here)
+library(ggplot2)
+
+US_birth_date_from_1985_to_2020 <- read_csv(here::here("inputs/data/fig_1.csv"))
+
+ggplot(data=US_birth_date_from_1985_to_2020, aes(x=`year`, y=`brate_all`, group=1)) +
+  geom_line()+
+  geom_point() +
+  ylim(50, 80)
+
