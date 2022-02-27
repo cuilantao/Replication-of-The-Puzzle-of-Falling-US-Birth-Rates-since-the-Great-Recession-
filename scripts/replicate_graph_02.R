@@ -20,9 +20,28 @@ merged_data_grouped_by$brith_rate_sb <- with(merged_data_grouped_by, sb_sum / `p
 merged_data_grouped_by$brith_rate_tb <- with(merged_data_grouped_by, tb_sum / `pop_sum` * 1000)
 merged_data_grouped_by$brith_rate_fbp <- with(merged_data_grouped_by, fbp_sum / `pop_sum` * 1000)
 
-
 ggplot(merged_data_grouped_by, aes(x=year)) + 
- geom_line(aes(y = brith_rate_fb), color = "darkred") + 
-  geom_line(aes(y = brith_rate_sb), color="steelblue") +
-  geom_line(aes(y = brith_rate_tb), color="green") +
-  geom_line(aes(y = brith_rate_fbp), color="purple")
+ geom_line(aes(y = brith_rate_fb, color = "First Birth")) + 
+  geom_line(aes(y = brith_rate_sb, color="Second Birth")) +
+  geom_line(aes(y = brith_rate_tb, color="Third Birth")) +
+  geom_line(aes(y = brith_rate_fbp, color="Fourth Birth")) +
+  scale_color_manual(name = "Parity (ages 15-44)", 
+                     values = c("First Birth" = "steelblue", 
+                                "Second Birth" = "orange", 
+                                "Third Birth" = "gray", 
+                                "Fourth Birth" = "yellow")) + 
+  xlab("Year") + ylab("Parity") + ggtitle("Parity (ages 15-44)")
+
+
+
+
+
+
+
+
+
+
+
+
+
+

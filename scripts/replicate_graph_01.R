@@ -9,5 +9,6 @@ US_birth_date_from_1985_to_2020 <- read_csv(here::here("inputs/data/fig_1.csv"))
 ggplot(data=US_birth_date_from_1985_to_2020, aes(x=`year`, y=`brate_all`, group=1)) +
   geom_line()+
   geom_point() +
-  ylim(50, 80)
+  ylim(50, 80) +
+  xlab("Year") + ylab("Births per 1,000 women age 15-44")
 

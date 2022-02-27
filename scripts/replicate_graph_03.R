@@ -67,10 +67,27 @@ data_with_cohort5 <- drop_na(final_data_wide_format, cohort5)
 data_with_cohort6 <- drop_na(final_data_wide_format, cohort6)
 
 ggplot() +
-  geom_line(data = data_with_cohort1, aes(x = mage, y = cohort1), color = "darkred") +
-  geom_line(data = data_with_cohort2, aes(x = mage, y = cohort2), color="steelblue")+
-  geom_line(data = data_with_cohort3, aes(x = mage, y = cohort3), color="steelblue")+
-  geom_line(data = data_with_cohort4, aes(x = mage, y = cohort4), color="steelblue")+
-  geom_line(data = data_with_cohort5, aes(x = mage, y = cohort5), color="steelblue")+
-  geom_line(data = data_with_cohort6, aes(x = mage, y = cohort6), color="steelblue")
+  geom_line(data = data_with_cohort1, aes(x = mage, y = cohort1, color = "1968-1972"))+
+  geom_line(data = data_with_cohort2, aes(x = mage, y = cohort2, color = "1973–1977")) +
+  geom_line(data = data_with_cohort3, aes(x = mage, y = cohort3, color = "1977–1982")) +
+  geom_line(data = data_with_cohort4, aes(x = mage, y = cohort4, color = "1983–1987")) +
+  geom_line(data = data_with_cohort5, aes(x = mage, y = cohort5, color = "1988–1992")) +
+  geom_line(data = data_with_cohort6, aes(x = mage, y = cohort6, color = "1993–1997")) +
+  scale_color_manual(name = "Birth Cohorts", 
+                     values = c("1968-1972" = "green", 
+                                "1973–1977" = "blue", 
+                                "1977–1982" = "orange", 
+                                "1983–1987" = "gray",
+                                "1988–1992" = "yellow",
+                                "1993–1997" = "lightblue"
+                                )) +
+  xlab("Mother's Age") + ylab("Children ever born") + 
+  ggtitle("Children Ever Born by Mother’s Age and Birth Cohort")
+
+
+
+
+
+
+
 
