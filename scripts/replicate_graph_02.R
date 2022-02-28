@@ -34,7 +34,7 @@ ggplot(merged_data_grouped_by, aes(x=year)) +
                                 "Second Birth" = "orange", 
                                 "Third Birth" = "gray", 
                                 "Fourth Birth" = "yellow")) + 
-  xlab("Year") + ylab("Parity") + ggtitle("Parity (ages 15-44)")
+  xlab("Year") + ylab("Birth Rate (births per 1000 women)") + ggtitle("Parity (ages 15-44)")
 
 
 
